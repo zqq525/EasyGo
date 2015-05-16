@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">SQLite</string>
 
-    <string name="app_name">EasyGo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">查询</string>
+    <string name="message_heavy">程度</string>
+    <string name="action_now">推荐</string>
+    <string name="action_other">其他</string>
+    <string name="message_message">根据车流量进行等级划分由高到低</string>
 
 </resources>
+
