@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SQLite</string>
+    <string name="app_name">EasyGo</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -9,6 +9,11 @@
     <string name="action_now">推荐</string>
     <string name="action_other">其他</string>
     <string name="message_message">根据车流量进行等级划分由高到低</string>
-
+    <string name="username">用户名：</string>
+    <string name="input_username">请输入用户名</string>
+    <string name="password">密码：</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_password_again">请再次输入密码</string>
+    <string name="title_activity_register">MainActivity</string>
 </resources>
 

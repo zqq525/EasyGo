@@ -1,34 +1,49 @@
 package com.example.easygo;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends Activity {
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
+
+public class MainActivity extends FragmentActivity implements OnClickListener {
+	private ImageButton bottom_imagebtn_01;
+	private ImageButton bottom_imagebtn_02;
+	private ViewPager viewpager;
+	private List<Fragment> mFragments;
+	private FirstFragment first = new FirstFragment();
+	private SecondFragment second = new SecondFragment();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		initView();
+		viewpager = (ViewPager) findViewById(R.id.viewpager);
+		mFragments = new ArrayList<Fragment>();
+		mFragments.add(first);
+		mFragments.add(second);
+		MyAdapter myadapter = new MyAdapter(getSupportFragmentManager(), mFragments);
+		viewpager.setAdapter(myadapter);
+	}
+
+	public void initView() {
+		// TODO Auto-generated method stub
+		bottom_imagebtn_01 = (ImageButton) findViewById(R.id.bottom_imagebtn_message);
+		bottom_imagebtn_02 = (ImageButton) findViewById(R.id.bottom_imagebtn_admin);
+		bottom_imagebtn_01.setOnClickListener(this);
+		bottom_imagebtn_02.setOnClickListener(this);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
 	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+	
 }
